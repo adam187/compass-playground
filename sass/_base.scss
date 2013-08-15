@@ -11,4 +11,19 @@ $bs-padding: 10px;
 @import "compass/utilities";
 @import "blueprint";
 @import "blueprint/link-icons";
+// @import "blueprint/typography";
 @import "compass/css3";
+
+// Sprite
+
+// $link_icons-layout:smart;
+$link_icons-spacing: 15px;
+@import "link_icons/*.png";
+@include all-link_icons-sprites;
+
+@mixin icons-block-sprite($sprite) {
+    @include link_icons-sprite($sprite, false, 10px , 10px);
+    height: link_icons-sprite-height($sprite) + $link_icons-spacing;
+    width: link_icons-sprite-width($sprite) + $link_icons-spacing;
+    display: inline-block;
+}

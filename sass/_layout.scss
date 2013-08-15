@@ -1,6 +1,12 @@
 
+// @include link_icons-sprites('feed');
+
+body {
+    @include blueprint-typography(true);
+}
 
 .wrap {
+    margin: 30px auto;
     @include container;
     @include single-box-shadow;
     @include border-radius(1em, 1em);
@@ -10,9 +16,11 @@
     background: black;
     padding-left:20px;
     @include border-top-radius(1em);
+    overflow: auto;
     h1 {
         color: white;
         padding: $bs-padding;
+        margin-bottom: 0;
     }
 }
 
@@ -22,7 +30,9 @@
     .content {
         @include column($blueprint-grid-columns - $sidebar-columns);
         @include box-sizing(border-box);
+        // @include showgrid;
         padding: $bs-padding;
+        background-color: #fff;
         ul {
             padding: 50px;
             li {
@@ -41,14 +51,23 @@
 
 .footer {
     background: red;
-    text-align: right;
+    @include legacy-pie-clearfix;
+    // text-align: right;
     padding:$bs-padding;
-    padding-right: 20px;
     @include border-bottom-radius(1em);
+    .copyright {
+        padding-right: 20px;
+        float: right;
+        color: #fff;
+    }
+    .icon {
+        @include icons-block-sprite(feed);
+    }
 }
 
 .test-link {
-    @include link-icon(email);
+    @include link-icon('email.png');
+    &:hover {
+        @include link-icon('visited.png');
+    }
 }
-
-
