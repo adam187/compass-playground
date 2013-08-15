@@ -1,0 +1,54 @@
+
+
+.wrap {
+    @include container;
+    @include single-box-shadow;
+    @include border-radius(1em, 1em);
+}
+
+.header {
+    background: black;
+    padding-left:20px;
+    @include border-top-radius(1em);
+    h1 {
+        color: white;
+        padding: $bs-padding;
+    }
+}
+
+.container {
+    background: blue;
+    @include legacy-pie-clearfix;
+    .content {
+        @include column($blueprint-grid-columns - $sidebar-columns);
+        @include box-sizing(border-box);
+        padding: $bs-padding;
+        ul {
+            padding: 50px;
+            li {
+                margin:10px 0;
+                padding-left: 20px;
+            }
+        }
+    }
+    .sidebar {
+        @include column($sidebar-columns, true);
+        @include box-sizing(border-box);
+        padding: $bs-padding;
+        background-color: yellow;
+    }
+}
+
+.footer {
+    background: red;
+    text-align: right;
+    padding:$bs-padding;
+    padding-right: 20px;
+    @include border-bottom-radius(1em);
+}
+
+.test-link {
+    @include link-icon(email);
+}
+
+
