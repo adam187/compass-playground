@@ -1,0 +1,33 @@
+
+.message-box {
+    $_offset: 15px;
+    margin: $_offset;
+    padding: $_offset;
+    border-width: 1px;
+    border-style: solid;
+    font-weight: bold;
+    @include border-radius(5px);
+    @include single-box-shadow;
+    @include transition-property(text-indent);
+    @include transition-timing-function(ease);
+    @include transition-duration(.1s);
+    @include transition-delay(.1s);
+    &:hover {
+        text-indent: 15px;
+    }
+}
+
+.error {
+    @extend .message-box;
+    background-color: #FFBABA;
+    border-color: #D8000C;
+    color: #D8000C;
+
+}
+
+.notice {
+    @extend .message-box;
+    background-color: #BDE5F8;
+    border-color: #00529B;
+    color: #00529B;
+}

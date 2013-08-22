@@ -21,6 +21,11 @@ body {
         color: white;
         padding: $bs-padding;
         margin-bottom: 0;
+        @include transition();
+        &:hover {
+            @include single-text-shadow(#fff);
+            color:red;
+        }
     }
 }
 
@@ -30,14 +35,19 @@ body {
     .content {
         @include column($blueprint-grid-columns - $sidebar-columns);
         @include box-sizing(border-box);
+        @include single-text-shadow;
         // @include showgrid;
         padding: $bs-padding;
         background-color: #fff;
         ul {
-            padding: 50px;
+            @include single-transition(padding-top, .9s);
+            padding: 20px 30px;
             li {
                 margin:10px 0;
                 padding-left: 20px;
+            }
+            &:hover {
+                padding-top: 30px;
             }
         }
     }
